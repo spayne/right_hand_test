@@ -1,4 +1,4 @@
-# OpenVR Device Driver: Right Hand Test
+# ![](right_hand_test/resources/icons/right_controller_status_ready.png) OpenVR Device Driver: Right Hand Test
 
 This is a minimal OpenVR driver that publishes a controller with an animating skeleton on the right hand. 
 
