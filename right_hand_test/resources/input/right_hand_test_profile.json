@@ -1,0 +1,49 @@
+{
+  "jsonid": "input_profile",
+  "controller_type": "right_hand_test",
+  "legacy_profile": "right_hand_test",
+  "legacy_binding" :  "{right_hand_test}/input/legacy_bindings_right_hand_test.json",
+  "input_bindingui_mode" : "controller_handed",
+  "input_bindingui_left" :
+  {
+    "image": "{right_hand_test}/icons/right_hand_test.svg"
+  },
+  "input_bindingui_right" :
+  {
+    "image": "{right_hand_test}/icons/right_hand_test.svg"
+  },
+  "input_source" :
+  {
+    "/input/finger/index" : {
+        "type" : "trigger",
+	"visibility" : "InputValueVisibility_AvailableButHidden",
+        "binding_image_point" : [ 56, 86 ]
+    },
+    "/input/finger/middle" : {
+        "type" : "trigger",
+	"visibility" : "InputValueVisibility_AvailableButHidden",
+        "binding_image_point" : [ 56, 86 ]
+    },
+    "/input/finger/ring" : {
+        "type" : "trigger",
+	"visibility" : "InputValueVisibility_AvailableButHidden",
+        "binding_image_point" : [ 56, 86 ]
+    },
+    "/input/finger/pinky" : {
+        "type" : "trigger",
+	"visibility" : "InputValueVisibility_AvailableButHidden",
+        "binding_image_point" : [ 56, 86 ]
+    },
+    "/pose/raw" : {
+        "type" : "pose",
+        "binding_image_point" : [ 5, 35 ]
+    },
+    "/input/skeleton/right" : {
+        "type" : "skeleton",
+        "skeleton": "/skeleton/hand/right",
+        "side" : "right",
+        "binding_image_point" : [ 5, 35 ]
+    }
+  }
+ }
+
