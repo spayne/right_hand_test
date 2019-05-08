@@ -2,10 +2,18 @@
 
 This is a minimal OpenVR driver that publishes a controller with an animating skeleton on the right hand. 
 
-It is correct and as small as possible.
+It is as correct and as small as possible. If you can make it more correct, please let me know! 
 
-## Introductory Video
+## Introduction
+The following video demostrates how to show building, installing, looking at the code, running in unity, unreal and bindings gui
+[![](http://img.youtube.com/vi/ynk3SmmYDBo/0.jpg)](http://www.youtube.com/watch?v=ynk3SmmYDBo "Demonstration of OpenVR: Right Hand Test")
 
-
+## Installing
+1. Clone the repo
+2. Open the solution from Visual Studio 2017
+3. Build (Should default to a 64 bit dll build).
+4. From the command line run install_driver.bat
+5. Start SteamVR - Verify you see the sample controller on the right hand side
+6. From within a game, setup the bindings for this device.  
 
 
