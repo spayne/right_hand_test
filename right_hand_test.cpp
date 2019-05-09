@@ -33,17 +33,17 @@ public:
     atomic<bool> m_active;
     thread m_pose_thread;
 
-	RightHandTest()
-		:	m_frame_count(0),
-			m_found_hmd(false),
-			m_active(false)
-	{}
+    RightHandTest()
+        :   m_frame_count(0),
+            m_found_hmd(false),
+            m_active(false)
+    {}
 
 
     EVRInitError Activate(uint32_t unObjectId) override
     {
         m_id = unObjectId;
-		m_pose = { 0 };
+        m_pose = { 0 };
         m_pose.poseIsValid = true;
         m_pose.result = TrackingResult_Running_OK;
         m_pose.deviceIsConnected = true;
@@ -69,8 +69,8 @@ public:
             "/skeleton/hand/right", // skeleton_path
             "/pose_raw", // base_pose_path
             VRSkeletalTracking_Partial,
-            nullptr,
-            0,
+			right_grip_limit_transforms,
+			NUM_BONES,
             &m_skeleton);
         m_active = true;
         m_pose_thread = std::thread(&RightHandTest::UpdatePoseThread, this);
@@ -108,7 +108,7 @@ public:
             {
                 m_pose.vecPosition[0] = hmd_pose.mDeviceToAbsoluteTracking.m[0][3];
                 m_pose.vecPosition[1] = hmd_pose.mDeviceToAbsoluteTracking.m[1][3];
-				m_pose.vecPosition[2] = hmd_pose.mDeviceToAbsoluteTracking.m[2][3]+0.75;
+                m_pose.vecPosition[2] = hmd_pose.mDeviceToAbsoluteTracking.m[2][3]+0.75;
                 m_found_hmd = true;
             }
         }
@@ -131,7 +131,7 @@ public:
             m_frame_count++;
             UpdateControllerPose();
             UpdateHandSkeletonPoses();
-            this_thread::sleep_for(chrono::milliseconds(16));
+            this_thread::sleep_for(chrono::milliseconds(11));
         }
     }
 };
